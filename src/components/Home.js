@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
+import '../custom-calendar.css';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
 const localizer = momentLocalizer(moment)
@@ -31,7 +32,7 @@ const Home = () => {
   const handleSlotSelection = (slotInfo) => {
     const { start, end } = slotInfo;
     const newEvent = {
-      title: 'New Appointment',
+      title: 'Henna appointment for your_name',
       start: start,
       end: end,
     };

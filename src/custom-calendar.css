@@ -1,0 +1,10 @@
+/* custom-calendar.css */
+.rbc-day-slot .rbc-event {
+    border: none !important;
+}
+
+.rbc-event {
+    background-color: #e4baf5 !important; 
+    color: #f9ecf9 !important;
+  }
+  
