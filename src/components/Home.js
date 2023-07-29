@@ -26,7 +26,7 @@ const Home = ({ events }) => {
         events={events}
         startAccessor="start"
         endAccessor="end"
-        views={['week']}
+        // views={['week']} // 'title' undefined issue
         selectable="true"
         step={60}
         onSelectSlot={handleSlotSelection}
