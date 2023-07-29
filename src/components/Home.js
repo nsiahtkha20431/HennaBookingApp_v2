@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
@@ -26,7 +27,7 @@ const Home = ({ events }) => {
         events={events}
         startAccessor="start"
         endAccessor="end"
-        // views={['week']} // 'title' undefined issue
+        defaultView="week"
         selectable="true"
         step={60}
         onSelectSlot={handleSlotSelection}
