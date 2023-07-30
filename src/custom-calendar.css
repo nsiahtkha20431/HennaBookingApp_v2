@@ -1,4 +1,8 @@
 /* custom-calendar.css */
+/* body {
+    background-color: rgb(247, 214, 238); 
+  }   */
+
 .rbc-day-slot .rbc-event {
     border: none !important;
 }

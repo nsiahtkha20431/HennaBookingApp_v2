@@ -6,14 +6,6 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 
 const localizer = momentLocalizer(moment)
 
-// const events = [
-//   {
-//     title: 'Henna Appointment',
-//     start: new Date(2023, 7, 28, 10, 0), 
-//     end: new Date(2023, 7, 28, 11, 0),
-//   },
-// ];
-
 const Home = () => {
 
   const [events, setEvents] = useState([
@@ -24,11 +16,6 @@ const Home = () => {
     },
   ]);
 
-  // const handleSlotSelection = (slotInfo) => {
-  //   const { start, end } = slotInfo;
-  //   console.log('Selected slot from', start, 'to', end);
-  // };
-
   const handleSlotSelection = (slotInfo) => {
     const { start, end } = slotInfo;
     const newEvent = {
@@ -38,13 +25,18 @@ const Home = () => {
     };
   
     setEvents([...events, newEvent]); // Add new event to the events array and update the state
-  
-    console.log('Selected slot from', start, 'to', end);
   };
   
 
+    // Set the min and max times
+    const minTime = new Date();
+    minTime.setHours(10, 0, 0);
+    const maxTime = new Date();
+    maxTime.setHours(22, 0, 0);
+  
+
   return (
-    <div style={{ height: '500px' }}>
+    <div style={{ height: '800px' }}>
       <Calendar
         localizer={localizer}
         events={events}
@@ -52,8 +44,11 @@ const Home = () => {
         endAccessor="end"
         defaultView="week"
         selectable="true"
-        step={60}
+        step={30}
         onSelectSlot={handleSlotSelection}
+        min={minTime} // 10AM
+        max={maxTime} // 10PM
+        timeslots={2} // 1-hour blocks
       />
     </div>
   );
